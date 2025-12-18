@@ -1,0 +1,39 @@
+.root {
+    -fx-font-family: "Courier New", monospace;
+    -fx-background-color: #2c003e; /* Dark Purple Background */
+}
+
+.label {
+    -fx-text-fill: #e0e0e0;
+}
+
+.card-label {
+    -fx-background-color: #fffacd; /* Lemon Chiffon cards */
+    -fx-border-color: #ffd700;     /* Gold Border */
+    -fx-text-fill: black;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 12;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 215, 0, 0.4), 10, 0, 0, 0);
+}
+
+.button {
+    -fx-background-color: #4b0082; /* Indigo */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #8a2be2; /* Blue Violet */
+}
+
+.text-area {
+    -fx-control-inner-background: #1a0025;
+    -fx-text-fill: #00ff00; /* Matrix Green Text */
+    -fx-font-family: "Consolas";
+}

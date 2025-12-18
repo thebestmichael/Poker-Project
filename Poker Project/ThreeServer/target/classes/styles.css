@@ -1,0 +1,10 @@
+/* Styling file */
+.root {
+    -fx-font-family: "Arial";
+}
+.button {
+    -fx-cursor: hand;
+}
+.label {
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}

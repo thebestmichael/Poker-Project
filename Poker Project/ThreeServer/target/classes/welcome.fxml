@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="project3.client.WelcomeController"
+      alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+    
+    <Label text="Welcome To 3-Card Poker" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="IP Address:"/>
+        <TextField fx:id="ipField" text="localhost"/>
+    </HBox>
+    
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Port:"/>
+        <TextField fx:id="portField" text="5555"/>
+    </HBox>
+    
+    <Button text="Connect" onAction="#handleConnect" style="-fx-font-size: 14px;"/>
+</VBox>
