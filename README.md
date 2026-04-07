@@ -25,7 +25,7 @@ In Three-Card Poker, players evaluate their hands against the dealer (managed by
 The repository is divided into two separate Maven projects:
 * **/ThreeServer:** Contains the core game engine, the multithreaded server logic, deck management, and the `ThreeCardLogic` evaluation system.
 * **/ThreeClient:** Contains the JavaFX application, FXML views (`welcome.fxml`, `game.fxml`, `winLose.fxml`), and client-side socket connection logic.
-* **/shared:** (Conceptually) Both modules utilize a shared `PokerInfo.java` and `Card.java` class to ensure the serialized objects match perfectly across the network boundaries.
+* **/shared:** Both modules utilize a `PokerInfo.java` and `Card.java` class. **Important:** These classes *must* remain completely identical on both the client and server sides to ensure Java Object Serialization works correctly across the network boundary.
 
 ## 🛠️ How to Run
 Because this is a networked application, you must run the Server and the Client(s) in separate instances.
