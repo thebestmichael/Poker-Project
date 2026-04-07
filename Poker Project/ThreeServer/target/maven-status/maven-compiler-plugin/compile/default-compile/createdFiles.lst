@@ -1,7 +1,7 @@
-project3\server\Server.class
-project3\server\ThreeCardLogic.class
-project3\server\Deck.class
-project3\shared\Card.class
-project3\server\Server$ClientThread.class
-project3\shared\PokerInfo.class
-project3\server\ServerApp.class
+project3/server/ThreeCardLogic.class
+project3/server/ServerApp.class
+project3/server/Server$ClientThread.class
+project3/server/Deck.class
+project3/shared/PokerInfo.class
+project3/shared/Card.class
+project3/server/Server.class

@@ -8,6 +8,31 @@ The application is split into two distinct modules (`ThreeClient` and `ThreeServ
 ### 🃏 How the Game Works
 In Three-Card Poker, players evaluate their hands against the dealer (managed by the server). Each player receives three cards, and hands are ranked using standard poker hierarchies adapted for three cards (e.g., Straight Flush, Three of a Kind, Straight, Flush, Pair, High Card). Players place Ante and Pair Plus wagers, and the server automatically calculates winnings and losses based on the hand comparisons.
 
+## 📸 Screenshots
+
+<details>
+<summary><b>Click to view the application walkthrough (4 images)</b></summary>
+<div align="left">
+  
+  <h3>Initial Connection</h3>
+  <p>The client entry point where players specify the server's IP address and port.</p>
+  <img src="images/Initial%20Screen.png" width="450">
+
+  <h3>Server Dashboard & Live Logs</h3>
+  <p>The multithreaded server interface showcasing real-time event logging.</p>
+  <img src="images/Server%20Dashboard.png" width="450">
+
+  <h3>Active Gameplay</h3>
+  <p>The main game interface during a live hand with revealed cards.</p>
+  <img src="images/Gameplay.png" width="450">
+
+  <h3>Hand Evaluation Results</h3>
+  <p>The final result state showing the bankroll update.</p>
+  <img src="images/Results_Screen.png" width="450">
+
+</div>
+</details>
+
 ## 🚀 Technical Stack
 * **Language:** Java
 * **Framework:** JavaFX (UI layout via FXML, styling via CSS)
