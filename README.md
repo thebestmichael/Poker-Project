@@ -1,66 +1,43 @@
-Three-Card Poker: Networked Client-Server Application
+# Three-Card Poker: Networked Client-Server Application
 
-📌 Overview
-This project is a fully networked, multiplayer Three-Card Poker game built using Java. It utilizes a robust Client-Server architecture communicating via Java Sockets, allowing multiple client applications to connect to a central server and play simultaneously.
+## 📌 Overview
+This project is a fully networked, multiplayer Three-Card Poker game built using **Java**. It utilizes a robust **Client-Server architecture** communicating via **Java Sockets**, allowing multiple client applications to connect to a central server and play simultaneously.
 
-The application is split into two distinct modules (ThreeClient and ThreeServer) and features a graphical user interface built with JavaFX.
+The application is split into two distinct modules (`ThreeClient` and `ThreeServer`) and features a graphical user interface built with **JavaFX**.
 
-🚀 Technical Stack
-Language: Java
+### 🃏 How the Game Works
+In Three-Card Poker, players evaluate their hands against the dealer (managed by the server). Each player receives three cards, and hands are ranked using standard poker hierarchies adapted for three cards (e.g., Straight Flush, Three of a Kind, Straight, Flush, Pair, High Card). Players place Ante and Pair Plus wagers, and the server automatically calculates winnings and losses based on the hand comparisons.
 
-Framework: JavaFX (UI layout via FXML, styling via CSS)
+## 🚀 Technical Stack
+* **Language:** Java
+* **Framework:** JavaFX (UI layout via FXML, styling via CSS)
+* **Networking:** Java Sockets (TCP/IP), Object Serialization
+* **Build Tool:** Maven
+* **Testing:** JUnit 5 (Comprehensive testing of game logic and hand evaluation)
 
-Networking: Java Sockets (TCP/IP), Object Serialization
+## ✨ Key Features
+* **Client-Server Architecture:** Strict separation of concerns. The server handles game state, card distribution, and win/loss logic, while the client is strictly responsible for rendering the UI and capturing user input.
+* **Concurrency & Multithreading:** The server utilizes multithreading to actively listen for new connections while seamlessly managing the game state of currently connected clients without blocking.
+* **Data Serialization:** Network communication is handled by serializing and transmitting a custom `PokerInfo` object back and forth between the client and server streams.
+* **UI/Logic Separation:** UI layouts are cleanly abstracted into `.fxml` files and styled with `.css`, ensuring the Java controllers only handle application logic.
 
-Build Tool: Maven
-
-Testing: JUnit 5 (Comprehensive testing of game logic and hand evaluation)
-
-✨ Key Features
-Client-Server Architecture: Strict separation of concerns. The server handles game state, card distribution, and win/loss logic, while the client is strictly responsible for rendering the UI and capturing user input.
-
-Concurrency & Multithreading: The server utilizes multithreading to actively listen for new connections while seamlessly managing the game state of currently connected clients without blocking.
-
-Data Serialization: Network communication is handled by serializing and transmitting a custom PokerInfo object back and forth between the client and server streams.
-
-UI/Logic Separation: UI layouts are cleanly abstracted into .fxml files and styled with .css, ensuring the Java controllers only handle application logic.
-
-📁 Project Structure
+## 📁 Project Structure
 The repository is divided into two separate Maven projects:
+* **/ThreeServer:** Contains the core game engine, the multithreaded server logic, deck management, and the `ThreeCardLogic` evaluation system.
+* **/ThreeClient:** Contains the JavaFX application, FXML views (`welcome.fxml`, `game.fxml`, `winLose.fxml`), and client-side socket connection logic.
+* **/shared:** (Conceptually) Both modules utilize a shared `PokerInfo.java` and `Card.java` class to ensure the serialized objects match perfectly across the network boundaries.
 
-/ThreeServer: Contains the core game engine, the multithreaded server logic, deck management, and the ThreeCardLogic evaluation system.
-
-/ThreeClient: Contains the JavaFX application, FXML views (welcome.fxml, game.fxml, winLose.fxml), and client-side socket connection logic.
-
-/shared: (Conceptually) Both modules utilize a shared PokerInfo.java and Card.java class to ensure the serialized objects match perfectly across the network boundaries.
-
-🛠️ How to Run
+## 🛠️ How to Run
 Because this is a networked application, you must run the Server and the Client(s) in separate instances.
 
-Prerequisites:
+**Prerequisites:**
+* Java Development Kit (JDK) installed.
+* Apache Maven installed.
 
-Java Development Kit (JDK) installed.
-
-Apache Maven installed.
-
-1. Start the Server:
-
-Open a terminal and navigate to the ThreeServer directory.
-
-Compile and run the server using Maven:
-
-Bash
-mvn clean compile exec:java
-Enter the desired port number in the server UI and start listening for connections.
-
-2. Start a Client:
-
-Open a new terminal window and navigate to the ThreeClient directory.
-
-Compile and run the client using Maven:
-
-Bash
-mvn clean compile exec:java
-Enter the server's IP address (e.g., 127.0.0.1 for local) and the port number you configured on the server, then click connect.
-
-Optional: Repeat the client steps in additional terminal windows to simulate multiple players connecting to the same server.
+**1. Start the Server:**
+1. Open a terminal and navigate to the `ThreeServer` directory.
+2. Compile and run the server using Maven:
+   ```bash
+   mvn clean compile exec:java
+3. Enter the server's IP address (e.g., 127.0.0.1 for local) and the port number you configured on the server, then click connect.
+4. Optional: Repeat the client steps in additional terminal windows to simulate multiple players connecting to the same server.
